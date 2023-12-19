@@ -11,3 +11,6 @@ int main() {
     char *newStr = replaceCharCopy(testStr2, 'o', 'O');
     printf("replaceCharCopy: %s\n", newStr);
     free(newStr);
+    char testStr3[] = "Hello, World!";
+    removeChar(testStr3, 'l');
+    printf("removeChar: %s\n", testStr3);
