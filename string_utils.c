@@ -32,3 +32,16 @@ char *replaceCharCopy(const char *s, char oldChar, char newChar) {
     newStr[len] = '\0';
     return newStr;
 }
+
+void removeChar(char *s, char c) {
+    char *src, *dst;
+
+    for (src = dst = s; *src != '\0'; src++) {
+        if (*src != c) {
+            *dst++ = *src;
+        }
+    }
+
+    *dst = '\0';
+}
+
