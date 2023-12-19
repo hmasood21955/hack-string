@@ -16,3 +16,19 @@ void replaceChar(char *s, char oldChar, char newChar) {
         s++;
     }
 }
+char *replaceCharCopy(const char *s, char oldChar, char newChar) {
+    int len = strlen(s);
+    char *newStr = (char *)malloc(len + 1);
+
+    if (newStr == NULL) {
+        fprintf(stderr, "Memory allocation failed\n");
+        exit(EXIT_FAILURE);
+    }
+
+    for (int i = 0; i < len; i++) {
+        newStr[i] = (s[i] == oldChar) ? newChar : s[i];
+    }
+
+    newStr[len] = '\0';
+    return newStr;
+}
