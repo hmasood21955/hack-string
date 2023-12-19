@@ -18,3 +18,15 @@ int main() {
     char *newStr2 = removeCharCopy(testStr4, 'o');
     printf("removeCharCopy: %s\n", newStr2);
     free(newStr2);
+    const char testStr5[] = "Hello World, how are you?";
+    char **substrings = lengthSplit(testStr5, 3);
+
+    printf("lengthSplit:\n");
+    for (int i = 0; i < 9; i++) {
+        printf("%s\n", substrings[i]);
+        free(substrings[i]);
+    }
+    free(substrings);
+
+    return 0;
+}
