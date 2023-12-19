@@ -74,3 +74,16 @@ char **lengthSplit(const char *s, int n) {
         exit(EXIT_FAILURE);
     }
 
+    for (int i = 0; i < numSubstrings; i++) {
+        substrings[i] = (char *)malloc(n + 1);
+        if (substrings[i] == NULL) {
+            fprintf(stderr, "Memory allocation failed\n");
+            exit(EXIT_FAILURE);
+        }
+
+        strncpy(substrings[i], s + i * n, n);
+        substrings[i][n] = '\0';
+    }
+
+    return substrings;
+}
