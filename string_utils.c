@@ -64,3 +64,13 @@ char *removeCharCopy(const char *s, char c) {
     newStr[j] = '\0';
     return newStr;
 }
+
+char **lengthSplit(const char *s, int n) {
+    int numSubstrings = countSubstrings(s, n);
+
+    char **substrings = (char **)malloc(numSubstrings * sizeof(char *));
+    if (substrings == NULL) {
+        fprintf(stderr, "Memory allocation failed\n");
+        exit(EXIT_FAILURE);
+    }
+
