@@ -45,3 +45,22 @@ void removeChar(char *s, char c) {
     *dst = '\0';
 }
 
+char *removeCharCopy(const char *s, char c) {
+    int len = strlen(s);
+    char *newStr = (char *)malloc(len + 1);
+
+    if (newStr == NULL) {
+        fprintf(stderr, "Memory allocation failed\n");
+        exit(EXIT_FAILURE);
+    }
+
+    int j = 0;
+    for (int i = 0; i < len; i++) {
+        if (s[i] != c) {
+            newStr[j++] = s[i];
+        }
+    }
+
+    newStr[j] = '\0';
+    return newStr;
+}
