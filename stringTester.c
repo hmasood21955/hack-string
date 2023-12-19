@@ -14,3 +14,7 @@ int main() {
     char testStr3[] = "Hello, World!";
     removeChar(testStr3, 'l');
     printf("removeChar: %s\n", testStr3);
+    const char testStr4[] = "Hello, World!";
+    char *newStr2 = removeCharCopy(testStr4, 'o');
+    printf("removeCharCopy: %s\n", newStr2);
+    free(newStr2);
